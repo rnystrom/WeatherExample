@@ -1,0 +1,186 @@
+{
+    "city": {
+        "coord": {
+            "lat": 0, 
+            "lon": 0
+        }, 
+        "country": "", 
+        "id": 6295630, 
+        "name": "Earth", 
+        "population": 0
+    }, 
+    "cnt": 7, 
+    "cod": "200", 
+    "list": [
+        {
+            "clouds": 36, 
+            "deg": 213, 
+            "dt": 1378724400, 
+            "humidity": 100, 
+            "pressure": 1027.02, 
+            "speed": 11.17, 
+            "temp": {
+                "day": 74.39, 
+                "eve": 74.21, 
+                "max": 74.39, 
+                "min": 73.78, 
+                "morn": 74.39, 
+                "night": 73.78
+            }, 
+            "weather": [
+                {
+                    "description": "scattered clouds", 
+                    "icon": "03d", 
+                    "id": 802, 
+                    "main": "Clouds"
+                }
+            ]
+        }, 
+        {
+            "clouds": 68, 
+            "deg": 208, 
+            "dt": 1378810800, 
+            "humidity": 100, 
+            "pressure": 1028, 
+            "speed": 8.66, 
+            "temp": {
+                "day": 73.51, 
+                "eve": 73.87, 
+                "max": 73.99, 
+                "min": 73.18, 
+                "morn": 73.24, 
+                "night": 73.54
+            }, 
+            "weather": [
+                {
+                    "description": "broken clouds", 
+                    "icon": "04d", 
+                    "id": 803, 
+                    "main": "Clouds"
+                }
+            ]
+        }, 
+        {
+            "clouds": 0, 
+            "deg": 207, 
+            "dt": 1378897200, 
+            "humidity": 100, 
+            "pressure": 1027.18, 
+            "speed": 7.91, 
+            "temp": {
+                "day": 73.92, 
+                "eve": 73.74, 
+                "max": 73.94, 
+                "min": 73.17, 
+                "morn": 73.17, 
+                "night": 73.53
+            }, 
+            "weather": [
+                {
+                    "description": "sky is clear", 
+                    "icon": "01d", 
+                    "id": 800, 
+                    "main": "Clear"
+                }
+            ]
+        }, 
+        {
+            "clouds": 36, 
+            "deg": 196, 
+            "dt": 1378983600, 
+            "humidity": 100, 
+            "pressure": 1027.79, 
+            "speed": 8.12, 
+            "temp": {
+                "day": 73.36, 
+                "eve": 73.87, 
+                "max": 73.96, 
+                "min": 73.15, 
+                "morn": 73.15, 
+                "night": 73.72
+            }, 
+            "weather": [
+                {
+                    "description": "scattered clouds", 
+                    "icon": "03d", 
+                    "id": 802, 
+                    "main": "Clouds"
+                }
+            ]
+        }, 
+        {
+            "clouds": 8, 
+            "deg": 184, 
+            "dt": 1379070000, 
+            "humidity": 100, 
+            "pressure": 1028.85, 
+            "speed": 8.88, 
+            "temp": {
+                "day": 73.78, 
+                "eve": 73.63, 
+                "max": 73.78, 
+                "min": 73.27, 
+                "morn": 73.6, 
+                "night": 73.27
+            }, 
+            "weather": [
+                {
+                    "description": "sky is clear", 
+                    "icon": "02d", 
+                    "id": 800, 
+                    "main": "Clear"
+                }
+            ]
+        }, 
+        {
+            "clouds": 64, 
+            "deg": 158, 
+            "dt": 1379156400, 
+            "humidity": 100, 
+            "pressure": 1029.71, 
+            "speed": 8.45, 
+            "temp": {
+                "day": 73.13, 
+                "eve": 73.62, 
+                "max": 73.74, 
+                "min": 72.73, 
+                "morn": 72.77, 
+                "night": 73.74
+            }, 
+            "weather": [
+                {
+                    "description": "broken clouds", 
+                    "icon": "04d", 
+                    "id": 803, 
+                    "main": "Clouds"
+                }
+            ]
+        }, 
+        {
+            "clouds": 16, 
+            "deg": 181, 
+            "dt": 1379242800, 
+            "humidity": 0, 
+            "pressure": 1029.47, 
+            "rain": 0.69, 
+            "speed": 11.43, 
+            "temp": {
+                "day": 73.74, 
+                "eve": 73.67, 
+                "max": 73.81, 
+                "min": 73.45, 
+                "morn": 73.45, 
+                "night": 73.81
+            }, 
+            "weather": [
+                {
+                    "description": "light rain", 
+                    "icon": "10d", 
+                    "id": 500, 
+                    "main": "Rain"
+                }
+            ]
+        }
+    ], 
+    "message": 0.0315
+}

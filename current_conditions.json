@@ -1,0 +1,39 @@
+{
+    "base": "global stations", 
+    "clouds": {
+        "all": 80
+    }, 
+    "cod": 200, 
+    "coord": {
+        "lat": 37.79, 
+        "lon": -122.41
+    }, 
+    "dt": 1378740424, 
+    "id": 5391959, 
+    "main": {
+        "humidity": 100, 
+        "pressure": 1008, 
+        "temp": 60.12, 
+        "temp_max": 71.01, 
+        "temp_min": 51.01
+    }, 
+    "name": "San Francisco", 
+    "sys": {
+        "country": "US", 
+        "sunrise": 1378734436, 
+        "sunset": 1378779956
+    }, 
+    "weather": [
+        {
+            "description": "broken clouds", 
+            "icon": "04d", 
+            "id": 803, 
+            "main": "Clouds"
+        }
+    ], 
+    "wind": {
+        "deg": 315, 
+        "gust": 1.03, 
+        "speed": 2.22
+    }
+}
