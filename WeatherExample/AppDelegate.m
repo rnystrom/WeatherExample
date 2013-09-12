@@ -7,14 +7,14 @@
 //
 
 #import "AppDelegate.h"
-#import "WeatherController.h"
+#import "WXController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[WeatherController alloc] init];
+    self.window.rootViewController = [[WXController alloc] init];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

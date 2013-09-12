@@ -8,7 +8,7 @@
 
 #import <Mantle.h>
 
-@interface CurrentCondition : MTLModel <MTLJSONSerializing>
+@interface WXCondition : MTLModel <MTLJSONSerializing>
 
 @property (nonatomic, strong) NSDate *date;
 @property (nonatomic, strong) NSNumber *humidity;
@@ -22,5 +22,8 @@
 @property (nonatomic, strong) NSString *condition;
 @property (nonatomic, strong) NSNumber *windBearing;
 @property (nonatomic, strong) NSNumber *windSpeed;
+@property (nonatomic, strong) NSString *icon;
+
+- (NSString *)imageName;
 
 @end

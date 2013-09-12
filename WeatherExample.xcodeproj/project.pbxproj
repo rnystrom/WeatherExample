@@ -7,16 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		863567C817DE3D13002D67B4 /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 863567C717DE3D13002D67B4 /* libReactiveCocoa-iOS.a */; };
-		8641E99E17DE174600C891E4 /* WeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8641E99D17DE174600C891E4 /* WeatherManager.m */; };
-		8641E9AD17DE214400C891E4 /* CurrentCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8641E9AC17DE214400C891E4 /* CurrentCondition.m */; };
+		861EB69B17E163CA00288D5C /* weather-broken.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB68317E163CA00288D5C /* weather-broken.png */; };
+		861EB69C17E163CA00288D5C /* weather-broken@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB68417E163CA00288D5C /* weather-broken@2x.png */; };
+		861EB69D17E163CA00288D5C /* weather-clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB68517E163CA00288D5C /* weather-clear.png */; };
+		861EB69E17E163CA00288D5C /* weather-clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB68617E163CA00288D5C /* weather-clear@2x.png */; };
+		861EB69F17E163CA00288D5C /* weather-few-night.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB68717E163CA00288D5C /* weather-few-night.png */; };
+		861EB6A017E163CA00288D5C /* weather-few-night@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB68817E163CA00288D5C /* weather-few-night@2x.png */; };
+		861EB6A117E163CA00288D5C /* weather-few.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB68917E163CA00288D5C /* weather-few.png */; };
+		861EB6A217E163CA00288D5C /* weather-few@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB68A17E163CA00288D5C /* weather-few@2x.png */; };
+		861EB6A317E163CA00288D5C /* weather-mist.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB68B17E163CA00288D5C /* weather-mist.png */; };
+		861EB6A417E163CA00288D5C /* weather-mist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB68C17E163CA00288D5C /* weather-mist@2x.png */; };
+		861EB6A517E163CA00288D5C /* weather-moon.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB68D17E163CA00288D5C /* weather-moon.png */; };
+		861EB6A617E163CA00288D5C /* weather-moon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB68E17E163CA00288D5C /* weather-moon@2x.png */; };
+		861EB6A717E163CA00288D5C /* weather-rain-night.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB68F17E163CA00288D5C /* weather-rain-night.png */; };
+		861EB6A817E163CA00288D5C /* weather-rain-night@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB69017E163CA00288D5C /* weather-rain-night@2x.png */; };
+		861EB6A917E163CA00288D5C /* weather-rain.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB69117E163CA00288D5C /* weather-rain.png */; };
+		861EB6AA17E163CA00288D5C /* weather-rain@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB69217E163CA00288D5C /* weather-rain@2x.png */; };
+		861EB6AB17E163CA00288D5C /* weather-scattered.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB69317E163CA00288D5C /* weather-scattered.png */; };
+		861EB6AC17E163CA00288D5C /* weather-scattered@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB69417E163CA00288D5C /* weather-scattered@2x.png */; };
+		861EB6AD17E163CA00288D5C /* weather-shower.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB69517E163CA00288D5C /* weather-shower.png */; };
+		861EB6AE17E163CA00288D5C /* weather-shower@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB69617E163CA00288D5C /* weather-shower@2x.png */; };
+		861EB6AF17E163CA00288D5C /* weather-snow.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB69717E163CA00288D5C /* weather-snow.png */; };
+		861EB6B017E163CA00288D5C /* weather-snow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB69817E163CA00288D5C /* weather-snow@2x.png */; };
+		861EB6B117E163CA00288D5C /* weather-tstorm.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB69917E163CA00288D5C /* weather-tstorm.png */; };
+		861EB6B217E163CA00288D5C /* weather-tstorm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861EB69A17E163CA00288D5C /* weather-tstorm@2x.png */; };
+		8641E99E17DE174600C891E4 /* WXManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8641E99D17DE174600C891E4 /* WXManager.m */; };
+		8641E9AD17DE214400C891E4 /* WXCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8641E9AC17DE214400C891E4 /* WXCondition.m */; };
+		86621B5017E144C800664992 /* WXClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 86621B4F17E144C800664992 /* WXClient.m */; };
+		86621B5417E1475000664992 /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86621B5317E1475000664992 /* libReactiveCocoa-iOS.a */; };
+		8675653C17E224680091B4DB /* WXDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 8675653B17E224680091B4DB /* WXDailyForecast.m */; };
 		86E45C4B17D4E8C70090C100 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E45C4A17D4E8C70090C100 /* Foundation.framework */; };
 		86E45C4D17D4E8C70090C100 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E45C4C17D4E8C70090C100 /* CoreGraphics.framework */; };
 		86E45C4F17D4E8C70090C100 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E45C4E17D4E8C70090C100 /* UIKit.framework */; };
 		86E45C5517D4E8C70090C100 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86E45C5317D4E8C70090C100 /* InfoPlist.strings */; };
 		86E45C5717D4E8C70090C100 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E45C5617D4E8C70090C100 /* main.m */; };
 		86E45C5B17D4E8C70090C100 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E45C5A17D4E8C70090C100 /* AppDelegate.m */; };
-		86E45C6117D4E8C70090C100 /* WeatherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E45C6017D4E8C70090C100 /* WeatherController.m */; };
+		86E45C6117D4E8C70090C100 /* WXController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E45C6017D4E8C70090C100 /* WXController.m */; };
 		86E45C6317D4E8C70090C100 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86E45C6217D4E8C70090C100 /* Images.xcassets */; };
 		86E96D6417D6BC0F00E2EEFA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E96D6317D6BC0F00E2EEFA /* CoreLocation.framework */; };
 		A9EE2BAD42354A67BDF49815 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA93468CFD34B76AE3D40EC /* libPods.a */; };
@@ -24,11 +50,41 @@
 
 /* Begin PBXFileReference section */
 		4CA93468CFD34B76AE3D40EC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		863567C717DE3D13002D67B4 /* libReactiveCocoa-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libReactiveCocoa-iOS.a"; path = "ReactiveCocoa/ReactiveCocoaFramework/build/Debug-iphoneos/libReactiveCocoa-iOS.a"; sourceTree = "<group>"; };
-		8641E99C17DE174600C891E4 /* WeatherManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherManager.h; sourceTree = "<group>"; };
-		8641E99D17DE174600C891E4 /* WeatherManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherManager.m; sourceTree = "<group>"; };
-		8641E9AB17DE214400C891E4 /* CurrentCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentCondition.h; sourceTree = "<group>"; };
-		8641E9AC17DE214400C891E4 /* CurrentCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentCondition.m; sourceTree = "<group>"; };
+		861EB68317E163CA00288D5C /* weather-broken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-broken.png"; sourceTree = "<group>"; };
+		861EB68417E163CA00288D5C /* weather-broken@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-broken@2x.png"; sourceTree = "<group>"; };
+		861EB68517E163CA00288D5C /* weather-clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-clear.png"; sourceTree = "<group>"; };
+		861EB68617E163CA00288D5C /* weather-clear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-clear@2x.png"; sourceTree = "<group>"; };
+		861EB68717E163CA00288D5C /* weather-few-night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-few-night.png"; sourceTree = "<group>"; };
+		861EB68817E163CA00288D5C /* weather-few-night@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-few-night@2x.png"; sourceTree = "<group>"; };
+		861EB68917E163CA00288D5C /* weather-few.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-few.png"; sourceTree = "<group>"; };
+		861EB68A17E163CA00288D5C /* weather-few@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-few@2x.png"; sourceTree = "<group>"; };
+		861EB68B17E163CA00288D5C /* weather-mist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-mist.png"; sourceTree = "<group>"; };
+		861EB68C17E163CA00288D5C /* weather-mist@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-mist@2x.png"; sourceTree = "<group>"; };
+		861EB68D17E163CA00288D5C /* weather-moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-moon.png"; sourceTree = "<group>"; };
+		861EB68E17E163CA00288D5C /* weather-moon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-moon@2x.png"; sourceTree = "<group>"; };
+		861EB68F17E163CA00288D5C /* weather-rain-night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-rain-night.png"; sourceTree = "<group>"; };
+		861EB69017E163CA00288D5C /* weather-rain-night@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-rain-night@2x.png"; sourceTree = "<group>"; };
+		861EB69117E163CA00288D5C /* weather-rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-rain.png"; sourceTree = "<group>"; };
+		861EB69217E163CA00288D5C /* weather-rain@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-rain@2x.png"; sourceTree = "<group>"; };
+		861EB69317E163CA00288D5C /* weather-scattered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-scattered.png"; sourceTree = "<group>"; };
+		861EB69417E163CA00288D5C /* weather-scattered@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-scattered@2x.png"; sourceTree = "<group>"; };
+		861EB69517E163CA00288D5C /* weather-shower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-shower.png"; sourceTree = "<group>"; };
+		861EB69617E163CA00288D5C /* weather-shower@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-shower@2x.png"; sourceTree = "<group>"; };
+		861EB69717E163CA00288D5C /* weather-snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-snow.png"; sourceTree = "<group>"; };
+		861EB69817E163CA00288D5C /* weather-snow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-snow@2x.png"; sourceTree = "<group>"; };
+		861EB69917E163CA00288D5C /* weather-tstorm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-tstorm.png"; sourceTree = "<group>"; };
+		861EB69A17E163CA00288D5C /* weather-tstorm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weather-tstorm@2x.png"; sourceTree = "<group>"; };
+		863567C717DE3D13002D67B4 /* libReactiveCocoa-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libReactiveCocoa-iOS.a"; path = "ReactiveCocoa/ReactiveCocoaFramework/build/Debug-iphoneos/libReactiveCocoa-iOS.a"; sourceTree = "<group>"; };
+		8641E99C17DE174600C891E4 /* WXManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXManager.h; sourceTree = "<group>"; };
+		8641E99D17DE174600C891E4 /* WXManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXManager.m; sourceTree = "<group>"; };
+		8641E9AB17DE214400C891E4 /* WXCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXCondition.h; sourceTree = "<group>"; };
+		8641E9AC17DE214400C891E4 /* WXCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXCondition.m; sourceTree = "<group>"; };
+		86621B4E17E144C800664992 /* WXClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXClient.h; sourceTree = "<group>"; };
+		86621B4F17E144C800664992 /* WXClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXClient.m; sourceTree = "<group>"; };
+		86621B5117E1473200664992 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = ReactiveCocoa/ReactiveCocoaFramework/build/Debug/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		86621B5317E1475000664992 /* libReactiveCocoa-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libReactiveCocoa-iOS.a"; path = "ReactiveCocoa/ReactiveCocoaFramework/build/Debug-iphoneos/libReactiveCocoa-iOS.a"; sourceTree = "<group>"; };
+		8675653A17E224680091B4DB /* WXDailyForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXDailyForecast.h; path = ../WXDailyForecast.h; sourceTree = "<group>"; };
+		8675653B17E224680091B4DB /* WXDailyForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WXDailyForecast.m; path = ../WXDailyForecast.m; sourceTree = "<group>"; };
 		86E45C4717D4E8C70090C100 /* WeatherExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E45C4A17D4E8C70090C100 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86E45C4C17D4E8C70090C100 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -39,8 +95,8 @@
 		86E45C5817D4E8C70090C100 /* WeatherExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeatherExample-Prefix.pch"; sourceTree = "<group>"; };
 		86E45C5917D4E8C70090C100 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		86E45C5A17D4E8C70090C100 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		86E45C5F17D4E8C70090C100 /* WeatherController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherController.h; sourceTree = "<group>"; };
-		86E45C6017D4E8C70090C100 /* WeatherController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherController.m; sourceTree = "<group>"; };
+		86E45C5F17D4E8C70090C100 /* WXController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXController.h; sourceTree = "<group>"; };
+		86E45C6017D4E8C70090C100 /* WXController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXController.m; sourceTree = "<group>"; };
 		86E45C6217D4E8C70090C100 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		86E45C6917D4E8C70090C100 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		86E96D6317D6BC0F00E2EEFA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -52,7 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				863567C817DE3D13002D67B4 /* libReactiveCocoa-iOS.a in Frameworks */,
+				86621B5417E1475000664992 /* libReactiveCocoa-iOS.a in Frameworks */,
 				86E96D6417D6BC0F00E2EEFA /* CoreLocation.framework in Frameworks */,
 				86E45C4D17D4E8C70090C100 /* CoreGraphics.framework in Frameworks */,
 				86E45C4F17D4E8C70090C100 /* UIKit.framework in Frameworks */,
@@ -64,9 +120,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		861EB68217E163CA00288D5C /* Weather Icons */ = {
+			isa = PBXGroup;
+			children = (
+				861EB68317E163CA00288D5C /* weather-broken.png */,
+				861EB68417E163CA00288D5C /* weather-broken@2x.png */,
+				861EB68517E163CA00288D5C /* weather-clear.png */,
+				861EB68617E163CA00288D5C /* weather-clear@2x.png */,
+				861EB68717E163CA00288D5C /* weather-few-night.png */,
+				861EB68817E163CA00288D5C /* weather-few-night@2x.png */,
+				861EB68917E163CA00288D5C /* weather-few.png */,
+				861EB68A17E163CA00288D5C /* weather-few@2x.png */,
+				861EB68B17E163CA00288D5C /* weather-mist.png */,
+				861EB68C17E163CA00288D5C /* weather-mist@2x.png */,
+				861EB68D17E163CA00288D5C /* weather-moon.png */,
+				861EB68E17E163CA00288D5C /* weather-moon@2x.png */,
+				861EB68F17E163CA00288D5C /* weather-rain-night.png */,
+				861EB69017E163CA00288D5C /* weather-rain-night@2x.png */,
+				861EB69117E163CA00288D5C /* weather-rain.png */,
+				861EB69217E163CA00288D5C /* weather-rain@2x.png */,
+				861EB69317E163CA00288D5C /* weather-scattered.png */,
+				861EB69417E163CA00288D5C /* weather-scattered@2x.png */,
+				861EB69517E163CA00288D5C /* weather-shower.png */,
+				861EB69617E163CA00288D5C /* weather-shower@2x.png */,
+				861EB69717E163CA00288D5C /* weather-snow.png */,
+				861EB69817E163CA00288D5C /* weather-snow@2x.png */,
+				861EB69917E163CA00288D5C /* weather-tstorm.png */,
+				861EB69A17E163CA00288D5C /* weather-tstorm@2x.png */,
+			);
+			path = "Weather Icons";
+			sourceTree = "<group>";
+		};
 		86E45C3E17D4E8C70090C100 = {
 			isa = PBXGroup;
 			children = (
+				861EB68217E163CA00288D5C /* Weather Icons */,
 				86E45C5017D4E8C70090C100 /* WeatherExample */,
 				86E45C4917D4E8C70090C100 /* Frameworks */,
 				86E45C4817D4E8C70090C100 /* Products */,
@@ -85,6 +173,8 @@
 		86E45C4917D4E8C70090C100 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				86621B5317E1475000664992 /* libReactiveCocoa-iOS.a */,
+				86621B5117E1473200664992 /* ReactiveCocoa.framework */,
 				863567C717DE3D13002D67B4 /* libReactiveCocoa-iOS.a */,
 				86E96D6317D6BC0F00E2EEFA /* CoreLocation.framework */,
 				86E45C4A17D4E8C70090C100 /* Foundation.framework */,
@@ -101,14 +191,18 @@
 			children = (
 				86E45C5917D4E8C70090C100 /* AppDelegate.h */,
 				86E45C5A17D4E8C70090C100 /* AppDelegate.m */,
-				86E45C5F17D4E8C70090C100 /* WeatherController.h */,
-				86E45C6017D4E8C70090C100 /* WeatherController.m */,
-				8641E9AB17DE214400C891E4 /* CurrentCondition.h */,
-				8641E9AC17DE214400C891E4 /* CurrentCondition.m */,
 				86E45C6217D4E8C70090C100 /* Images.xcassets */,
 				86E45C5117D4E8C70090C100 /* Supporting Files */,
-				8641E99C17DE174600C891E4 /* WeatherManager.h */,
-				8641E99D17DE174600C891E4 /* WeatherManager.m */,
+				86621B4E17E144C800664992 /* WXClient.h */,
+				86621B4F17E144C800664992 /* WXClient.m */,
+				8641E9AB17DE214400C891E4 /* WXCondition.h */,
+				8641E9AC17DE214400C891E4 /* WXCondition.m */,
+				86E45C5F17D4E8C70090C100 /* WXController.h */,
+				86E45C6017D4E8C70090C100 /* WXController.m */,
+				8675653A17E224680091B4DB /* WXDailyForecast.h */,
+				8675653B17E224680091B4DB /* WXDailyForecast.m */,
+				8641E99C17DE174600C891E4 /* WXManager.h */,
+				8641E99D17DE174600C891E4 /* WXManager.m */,
 			);
 			path = WeatherExample;
 			sourceTree = "<group>";
@@ -178,8 +272,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				861EB69C17E163CA00288D5C /* weather-broken@2x.png in Resources */,
+				861EB6A117E163CA00288D5C /* weather-few.png in Resources */,
+				861EB6B217E163CA00288D5C /* weather-tstorm@2x.png in Resources */,
+				861EB6B117E163CA00288D5C /* weather-tstorm.png in Resources */,
+				861EB6A717E163CA00288D5C /* weather-rain-night.png in Resources */,
+				861EB6A317E163CA00288D5C /* weather-mist.png in Resources */,
+				861EB6AD17E163CA00288D5C /* weather-shower.png in Resources */,
+				861EB6A817E163CA00288D5C /* weather-rain-night@2x.png in Resources */,
+				861EB6A917E163CA00288D5C /* weather-rain.png in Resources */,
+				861EB69E17E163CA00288D5C /* weather-clear@2x.png in Resources */,
+				861EB69D17E163CA00288D5C /* weather-clear.png in Resources */,
+				861EB6A017E163CA00288D5C /* weather-few-night@2x.png in Resources */,
+				861EB69B17E163CA00288D5C /* weather-broken.png in Resources */,
+				861EB6A517E163CA00288D5C /* weather-moon.png in Resources */,
+				861EB6B017E163CA00288D5C /* weather-snow@2x.png in Resources */,
 				86E45C6317D4E8C70090C100 /* Images.xcassets in Resources */,
+				861EB6AF17E163CA00288D5C /* weather-snow.png in Resources */,
+				861EB6AE17E163CA00288D5C /* weather-shower@2x.png in Resources */,
 				86E45C5517D4E8C70090C100 /* InfoPlist.strings in Resources */,
+				861EB6AC17E163CA00288D5C /* weather-scattered@2x.png in Resources */,
+				861EB6AB17E163CA00288D5C /* weather-scattered.png in Resources */,
+				861EB6A217E163CA00288D5C /* weather-few@2x.png in Resources */,
+				861EB6A417E163CA00288D5C /* weather-mist@2x.png in Resources */,
+				861EB6AA17E163CA00288D5C /* weather-rain@2x.png in Resources */,
+				861EB6A617E163CA00288D5C /* weather-moon@2x.png in Resources */,
+				861EB69F17E163CA00288D5C /* weather-few-night.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,10 +341,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86E45C6117D4E8C70090C100 /* WeatherController.m in Sources */,
-				8641E9AD17DE214400C891E4 /* CurrentCondition.m in Sources */,
+				86E45C6117D4E8C70090C100 /* WXController.m in Sources */,
+				8675653C17E224680091B4DB /* WXDailyForecast.m in Sources */,
+				86621B5017E144C800664992 /* WXClient.m in Sources */,
+				8641E9AD17DE214400C891E4 /* WXCondition.m in Sources */,
 				86E45C5B17D4E8C70090C100 /* AppDelegate.m in Sources */,
-				8641E99E17DE174600C891E4 /* WeatherManager.m in Sources */,
+				8641E99E17DE174600C891E4 /* WXManager.m in Sources */,
 				86E45C5717D4E8C70090C100 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

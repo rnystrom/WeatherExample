@@ -8,16 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "WXCondition.h"
 
-@class CurrentCondition;
-
-@interface WeatherManager : NSObject
+@interface WXManager : NSObject
 <CLLocationManagerDelegate>
 
-+ (instancetype)shareManager;
++ (instancetype)sharedManager;
 
 @property (nonatomic, strong, readonly) CLLocation *currentLocation;
-@property (nonatomic, strong, readonly) CurrentCondition *currentCondition;
+@property (nonatomic, strong, readonly) WXCondition *currentCondition;
+@property (nonatomic, strong, readonly) NSArray *hourlyForecast;
+@property (nonatomic, strong, readonly) NSArray *dailyForecast;
 
 - (void)findCurrentLocation;
 

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WeatherController : UIViewController
+@interface WXController : UIViewController
 <UITableViewDataSource, UITableViewDelegate>
 
 @end
