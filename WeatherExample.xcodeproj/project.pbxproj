@@ -35,6 +35,9 @@
 		8641E9AD17DE214400C891E4 /* WXCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8641E9AC17DE214400C891E4 /* WXCondition.m */; };
 		86621B5017E144C800664992 /* WXClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 86621B4F17E144C800664992 /* WXClient.m */; };
 		86621B5417E1475000664992 /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86621B5317E1475000664992 /* libReactiveCocoa-iOS.a */; };
+		866E3DAE17E2B53B00FDC57B /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 866E3DAC17E2B53B00FDC57B /* bg.png */; };
+		866E3DAF17E2B53B00FDC57B /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 866E3DAD17E2B53B00FDC57B /* bg@2x.png */; };
+		866E3DB517E2B86900FDC57B /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 866E3DB417E2B86900FDC57B /* UIImage+ImageEffects.m */; };
 		8675653C17E224680091B4DB /* WXDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 8675653B17E224680091B4DB /* WXDailyForecast.m */; };
 		86E45C4B17D4E8C70090C100 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E45C4A17D4E8C70090C100 /* Foundation.framework */; };
 		86E45C4D17D4E8C70090C100 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E45C4C17D4E8C70090C100 /* CoreGraphics.framework */; };
@@ -83,6 +86,10 @@
 		86621B4F17E144C800664992 /* WXClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXClient.m; sourceTree = "<group>"; };
 		86621B5117E1473200664992 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = ReactiveCocoa/ReactiveCocoaFramework/build/Debug/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		86621B5317E1475000664992 /* libReactiveCocoa-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libReactiveCocoa-iOS.a"; path = "ReactiveCocoa/ReactiveCocoaFramework/build/Debug-iphoneos/libReactiveCocoa-iOS.a"; sourceTree = "<group>"; };
+		866E3DAC17E2B53B00FDC57B /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = ../bg.png; sourceTree = "<group>"; };
+		866E3DAD17E2B53B00FDC57B /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg@2x.png"; path = "../bg@2x.png"; sourceTree = "<group>"; };
+		866E3DB317E2B86900FDC57B /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		866E3DB417E2B86900FDC57B /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		8675653A17E224680091B4DB /* WXDailyForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXDailyForecast.h; path = ../WXDailyForecast.h; sourceTree = "<group>"; };
 		8675653B17E224680091B4DB /* WXDailyForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WXDailyForecast.m; path = ../WXDailyForecast.m; sourceTree = "<group>"; };
 		86E45C4717D4E8C70090C100 /* WeatherExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +161,8 @@
 		86E45C3E17D4E8C70090C100 = {
 			isa = PBXGroup;
 			children = (
+				866E3DB317E2B86900FDC57B /* UIImage+ImageEffects.h */,
+				866E3DB417E2B86900FDC57B /* UIImage+ImageEffects.m */,
 				861EB68217E163CA00288D5C /* Weather Icons */,
 				86E45C5017D4E8C70090C100 /* WeatherExample */,
 				86E45C4917D4E8C70090C100 /* Frameworks */,
@@ -189,6 +198,8 @@
 		86E45C5017D4E8C70090C100 /* WeatherExample */ = {
 			isa = PBXGroup;
 			children = (
+				866E3DAC17E2B53B00FDC57B /* bg.png */,
+				866E3DAD17E2B53B00FDC57B /* bg@2x.png */,
 				86E45C5917D4E8C70090C100 /* AppDelegate.h */,
 				86E45C5A17D4E8C70090C100 /* AppDelegate.m */,
 				86E45C6217D4E8C70090C100 /* Images.xcassets */,
@@ -275,6 +286,7 @@
 				861EB69C17E163CA00288D5C /* weather-broken@2x.png in Resources */,
 				861EB6A117E163CA00288D5C /* weather-few.png in Resources */,
 				861EB6B217E163CA00288D5C /* weather-tstorm@2x.png in Resources */,
+				866E3DAF17E2B53B00FDC57B /* bg@2x.png in Resources */,
 				861EB6B117E163CA00288D5C /* weather-tstorm.png in Resources */,
 				861EB6A717E163CA00288D5C /* weather-rain-night.png in Resources */,
 				861EB6A317E163CA00288D5C /* weather-mist.png in Resources */,
@@ -292,6 +304,7 @@
 				861EB6AE17E163CA00288D5C /* weather-shower@2x.png in Resources */,
 				86E45C5517D4E8C70090C100 /* InfoPlist.strings in Resources */,
 				861EB6AC17E163CA00288D5C /* weather-scattered@2x.png in Resources */,
+				866E3DAE17E2B53B00FDC57B /* bg.png in Resources */,
 				861EB6AB17E163CA00288D5C /* weather-scattered.png in Resources */,
 				861EB6A217E163CA00288D5C /* weather-few@2x.png in Resources */,
 				861EB6A417E163CA00288D5C /* weather-mist@2x.png in Resources */,
@@ -341,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				866E3DB517E2B86900FDC57B /* UIImage+ImageEffects.m in Sources */,
 				86E45C6117D4E8C70090C100 /* WXController.m in Sources */,
 				8675653C17E224680091B4DB /* WXDailyForecast.m in Sources */,
 				86621B5017E144C800664992 /* WXClient.m in Sources */,

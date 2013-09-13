@@ -8,6 +8,7 @@
 
 #import "WXController.h"
 #import "WXManager.h"
+#import "UIImage+ImageEffects.h"
 
 @interface WXController ()
 
@@ -28,28 +29,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor grayColor];
+    
     self.hourlyFormatter = [[NSDateFormatter alloc] init];
     self.hourlyFormatter.dateFormat = @"h a";
     
     self.dailyFormatter = [[NSDateFormatter alloc] init];
     self.dailyFormatter.dateFormat = @"EEEE";
     
-    self.backgroundImageView = [[UIImageView alloc] init];
+    UIImage *background = [UIImage imageNamed:@"bg"];
+    
+    self.backgroundImageView = [[UIImageView alloc] initWithImage:background];
     self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:self.backgroundImageView];
     
-    self.blurredImageView = [[UIImageView alloc] init];
+    background = [background applyBlurWithRadius:10 tintColor:[UIColor colorWithWhite:0.5 alpha:0.3] saturationDeltaFactor:1.8 maskImage:nil];
+    
+    self.blurredImageView = [[UIImageView alloc] initWithImage:background];
     self.blurredImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.blurredImageView.alpha = 0;
     [self.view addSubview:self.blurredImageView];
     
-    self.tableView = [[UITableView alloc] init];
-    self.tableView.backgroundColor = [UIColor grayColor];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.separatorColor = [UIColor colorWithWhite:1 alpha:0.2];
     [self.view addSubview:self.tableView];
     
     CGRect headerFrame = [UIScreen mainScreen].bounds;
+    headerFrame.size.height -= 20;
+    
     CGFloat inset = 20;
     CGFloat tempHeight = 110;
     CGFloat hiloHeight = 40;
@@ -72,18 +82,28 @@
     hiloLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:28];
     [header addSubview:hiloLabel];
     
-    UILabel *cityLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, 44)];
+    UILabel *cityLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)];
     cityLabel.backgroundColor = [UIColor clearColor];
     cityLabel.textColor = [UIColor whiteColor];
-    cityLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:28];
+    cityLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18];
     cityLabel.textAlignment = NSTextAlignmentCenter;
     [header addSubview:cityLabel];
     
-    RAC(temperatureLabel, text) = [[RACObserve([WXManager sharedManager], currentCondition.temperature)
-                                    map:^(NSNumber *temp) {
-                                        return [NSString stringWithFormat:@"%.0f°",temp.floatValue];
-                                    }]
-                                   deliverOn:RACScheduler.mainThreadScheduler];
+    CGFloat iconHeight = 30;
+    CGRect iconFrame = CGRectMake(inset, temperatureFrame.origin.y - iconHeight, iconHeight, iconHeight);
+    UIImageView *iconView = [[UIImageView alloc] initWithFrame:iconFrame];
+    iconView.contentMode = UIViewContentModeScaleAspectFit;
+    iconView.backgroundColor = [UIColor clearColor];
+    [header addSubview:iconView];
+    
+    CGRect conditionsFrame = iconFrame;
+    conditionsFrame.size.width = self.view.bounds.size.width - 2*inset - iconHeight - 10;
+    conditionsFrame.origin.x = iconFrame.origin.x + iconHeight + 10;
+    UILabel *conditionsLabel = [[UILabel alloc] initWithFrame:conditionsFrame];
+    conditionsLabel.backgroundColor = [UIColor clearColor];
+    conditionsLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18];
+    conditionsLabel.textColor = [UIColor whiteColor];
+    [header addSubview:conditionsLabel];
     
     RAC(hiloLabel, text) = [[RACSignal combineLatest:@[
                                                        RACObserve([WXManager sharedManager], currentCondition.tempHigh),
@@ -93,11 +113,14 @@
                                               }]
                             deliverOn:RACScheduler.mainThreadScheduler];
     
-    RAC(cityLabel, text) = [[RACObserve([WXManager sharedManager], currentCondition.locationName)
-                             map:^(NSString *newName) {
-                                 return [newName capitalizedString];
-                             }]
-                            deliverOn:RACScheduler.mainThreadScheduler];
+    [[RACObserve([WXManager sharedManager], currentCondition)
+      deliverOn:RACScheduler.mainThreadScheduler]
+     subscribeNext:^(WXCondition *newCondition) {
+         temperatureLabel.text = [NSString stringWithFormat:@"%.0f°",newCondition.temperature.floatValue];
+         conditionsLabel.text = [newCondition.condition capitalizedString];
+         cityLabel.text = [newCondition.locationName capitalizedString];
+         iconView.image = [UIImage imageNamed:[newCondition imageName]];
+     }];
     
     [[RACObserve([WXManager sharedManager], hourlyForecast)
       deliverOn:RACScheduler.mainThreadScheduler]
@@ -125,6 +148,9 @@
     
     self.backgroundImageView.frame = bounds;
     self.blurredImageView.frame = bounds;
+    
+    bounds.origin.y = 20;
+    bounds.size.height -= 20;
     self.tableView.frame = bounds;
 }
 
@@ -134,7 +160,20 @@
 
 #pragma mark - Actions
 
+- (void)updateBlur:(CGFloat)percent {
+    self.blurredImageView.alpha = percent;
+}
+
+- (void)configureHeaderCell:(UITableViewCell *)cell title:(NSString *)title {
+    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18];
+    cell.textLabel.text = title;
+    cell.detailTextLabel.text = @"";
+    cell.imageView.image = nil;
+}
+
 - (void)configureHourlyCell:(UITableViewCell *)cell weather:(WXCondition *)weather {
+    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:18];
     cell.textLabel.text = [self.hourlyFormatter stringFromDate:weather.date];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%.0f°",weather.temperature.floatValue];
     cell.imageView.image = [UIImage imageNamed:[weather imageName]];
@@ -142,6 +181,8 @@
 }
 
 - (void)configureDailyCell:(UITableViewCell *)cell weather:(WXCondition *)weather {
+    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:18];
     cell.textLabel.text = [self.dailyFormatter stringFromDate:weather.date];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%.0f° / %.0f°",weather.tempHigh.floatValue,weather.tempLow.floatValue];
     cell.imageView.image = [UIImage imageNamed:[weather imageName]];
@@ -156,9 +197,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return MIN([[WXManager sharedManager].hourlyForecast count], 6);
+        return MIN([[WXManager sharedManager].hourlyForecast count], 6) + 1;
     }
-    return [[WXManager sharedManager].dailyForecast count];
+    return [[WXManager sharedManager].dailyForecast count] + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -170,17 +211,27 @@
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.backgroundColor = [UIColor clearColor];
+    cell.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.detailTextLabel.textColor = [UIColor whiteColor];
     
     if (indexPath.section == 0) {
-        WXCondition *weather = [WXManager sharedManager].hourlyForecast[indexPath.row];
-        [self configureHourlyCell:cell weather:weather];
+        if (indexPath.row == 0) {
+            [self configureHeaderCell:cell title:@"Hourly Forecast"];
+        }
+        else {
+            WXCondition *weather = [WXManager sharedManager].hourlyForecast[indexPath.row - 1];
+            [self configureHourlyCell:cell weather:weather];
+        }
     }
     else if (indexPath.section == 1) {
-        WXCondition *weather = [WXManager sharedManager].dailyForecast[indexPath.row];
-        [self configureDailyCell:cell weather:weather];
+        if (indexPath.row == 0) {
+            [self configureHeaderCell:cell title:@"Daily Forecast"];
+        }
+        else {
+            WXCondition *weather = [WXManager sharedManager].dailyForecast[indexPath.row - 1];
+            [self configureDailyCell:cell weather:weather];
+        }
     }
     
     return cell;
@@ -190,6 +241,15 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 55;
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat height = scrollView.bounds.size.height;
+    CGFloat position = MAX(scrollView.contentOffset.y, 0.0);
+    CGFloat percent = MIN(position / height, 1.0);
+    [self updateBlur:percent];
 }
 
 @end

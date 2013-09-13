@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface WXController : UIViewController
-<UITableViewDataSource, UITableViewDelegate>
+<UITableViewDataSource, UITableViewDelegate,UIScrollViewDelegate>
 
 @end
