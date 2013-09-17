@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Ryan Nystrom. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
-#import <ReactiveCocoa/ReactiveCocoa.h>
+@import Foundation;
+@import CoreLocation;
 #import "WXCondition.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface WXManager : NSObject
 <CLLocationManagerDelegate>

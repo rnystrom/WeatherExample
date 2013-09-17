@@ -232,6 +232,8 @@
             [self configureHeaderCell:cell title:@"Hourly Forecast"];
         }
         else {
+            // Note that WXClient actually uses WXDailyForecast
+            // but since it is a subclass of WXCondition we only need those properties
             WXCondition *weather = [WXManager sharedManager].hourlyForecast[indexPath.row - 1];
             [self configureHourlyCell:cell weather:weather];
         }

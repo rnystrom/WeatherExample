@@ -41,7 +41,9 @@
         _client = [[WXClient alloc] init];
         
         [[[RACObserve(self, currentLocation)
+           // Don't flatten if currenLocation is nil
            ignore:nil]
+          // Flatten and subscribe to all 3 signals when currentLocation updates
           flattenMap:^(CLLocation *newLocation) {
               return [RACSignal merge:@[
                                         [self updateCurrentConditions],
@@ -65,18 +67,21 @@
 
 - (RACSignal *)updateCurrentConditions {
     return [[self.client fetchCurrentConditionsForLocation:self.currentLocation.coordinate] doNext:^(WXCondition *condition) {
+        // Store the current condition as a property on our singleton
         self.currentCondition = condition;
     }];
 }
 
 - (RACSignal *)updateHourlyForecast {
     return [[self.client fetchHourlyForecastForLocation:self.currentLocation.coordinate] doNext:^(NSArray *conditions) {
+        // Store the current condition as a property on our singleton
         self.hourlyForecast = conditions;
     }];
 }
 
 - (RACSignal *)updateDailyForecast {
     return [[self.client fetchDailyForecastForLocation:self.currentLocation.coordinate] doNext:^(NSArray *conditions) {
+        // Store the current condition as a property on our singleton
         self.dailyForecast = conditions;
     }];
 }
@@ -84,6 +89,7 @@
 #pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    // Ignore the first update as its usually cached
     if (self.isFirstUpdate) {
         self.isFirstUpdate = NO;
         return;

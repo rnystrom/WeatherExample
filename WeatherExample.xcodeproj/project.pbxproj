@@ -34,11 +34,11 @@
 		8641E99E17DE174600C891E4 /* WXManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8641E99D17DE174600C891E4 /* WXManager.m */; };
 		8641E9AD17DE214400C891E4 /* WXCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8641E9AC17DE214400C891E4 /* WXCondition.m */; };
 		86621B5017E144C800664992 /* WXClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 86621B4F17E144C800664992 /* WXClient.m */; };
-		86621B5417E1475000664992 /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86621B5317E1475000664992 /* libReactiveCocoa-iOS.a */; };
 		866E3DAE17E2B53B00FDC57B /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 866E3DAC17E2B53B00FDC57B /* bg.png */; };
 		866E3DAF17E2B53B00FDC57B /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 866E3DAD17E2B53B00FDC57B /* bg@2x.png */; };
 		866E3DB517E2B86900FDC57B /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 866E3DB417E2B86900FDC57B /* UIImage+ImageEffects.m */; };
 		8675653C17E224680091B4DB /* WXDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 8675653B17E224680091B4DB /* WXDailyForecast.m */; };
+		869F2E4D17E7F4E900BEB556 /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 869F2E4C17E7F4E900BEB556 /* libReactiveCocoa-iOS.a */; };
 		86E45C4B17D4E8C70090C100 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E45C4A17D4E8C70090C100 /* Foundation.framework */; };
 		86E45C4D17D4E8C70090C100 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E45C4C17D4E8C70090C100 /* CoreGraphics.framework */; };
 		86E45C4F17D4E8C70090C100 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E45C4E17D4E8C70090C100 /* UIKit.framework */; };
@@ -92,6 +92,7 @@
 		866E3DB417E2B86900FDC57B /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		8675653A17E224680091B4DB /* WXDailyForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXDailyForecast.h; path = ../WXDailyForecast.h; sourceTree = "<group>"; };
 		8675653B17E224680091B4DB /* WXDailyForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WXDailyForecast.m; path = ../WXDailyForecast.m; sourceTree = "<group>"; };
+		869F2E4C17E7F4E900BEB556 /* libReactiveCocoa-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libReactiveCocoa-iOS.a"; path = "ReactiveCocoa/ReactiveCocoaFramework/build/Debug/libReactiveCocoa-iOS.a"; sourceTree = "<group>"; };
 		86E45C4717D4E8C70090C100 /* WeatherExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E45C4A17D4E8C70090C100 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86E45C4C17D4E8C70090C100 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86621B5417E1475000664992 /* libReactiveCocoa-iOS.a in Frameworks */,
+				869F2E4D17E7F4E900BEB556 /* libReactiveCocoa-iOS.a in Frameworks */,
 				86E96D6417D6BC0F00E2EEFA /* CoreLocation.framework in Frameworks */,
 				86E45C4D17D4E8C70090C100 /* CoreGraphics.framework in Frameworks */,
 				86E45C4F17D4E8C70090C100 /* UIKit.framework in Frameworks */,
@@ -182,6 +183,7 @@
 		86E45C4917D4E8C70090C100 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				869F2E4C17E7F4E900BEB556 /* libReactiveCocoa-iOS.a */,
 				86621B5317E1475000664992 /* libReactiveCocoa-iOS.a */,
 				86621B5117E1473200664992 /* ReactiveCocoa.framework */,
 				863567C717DE3D13002D67B4 /* libReactiveCocoa-iOS.a */,

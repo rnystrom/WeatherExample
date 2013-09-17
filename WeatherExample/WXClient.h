@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Ryan Nystrom. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+@import CoreLocation;
 #import <ReactiveCocoa/ReactiveCocoa.h>
-#import <CoreLocation/CoreLocation.h>
 
 @interface WXClient : NSObject
 

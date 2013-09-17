@@ -13,6 +13,7 @@
 @implementation WXCondition
 
 // http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes
+// This helper maps weather icon codes to our image files
 + (NSDictionary *)imageMap {
     static NSDictionary *_imageMap = nil;
     if (! _imageMap) {
@@ -40,6 +41,7 @@
     return _imageMap;
 }
 
+// Map JSON keys and key-paths to our Mantle object keys
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
              @"date": @"dt",
@@ -58,6 +60,8 @@
              };
 }
 
+// Transform values from JSON to NSDate and provide a reverse instruction
+// "Automagic" provided by using the format +[keyname]JSONTransformer
 + (NSValueTransformer *)dateJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
         return [NSDate dateWithTimeIntervalSince1970:str.floatValue];
@@ -74,6 +78,7 @@
     return [self dateJSONTransformer];
 }
 
+// Transform values from JSON array that is always 1 object to a single key
 + (NSValueTransformer *)conditionDescriptionJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray *values) {
         return [values firstObject];
@@ -90,6 +95,7 @@
     return [self conditionDescriptionJSONTransformer];
 }
 
+// Transform values using meters-per-second to miles-per-hour
 + (NSValueTransformer *)windSpeedJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
         return @(str.floatValue*MPS_TO_MPH);

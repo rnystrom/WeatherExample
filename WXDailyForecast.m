@@ -10,6 +10,7 @@
 
 @implementation WXDailyForecast
 
+// Use the super class's method and extend for a custom API call
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     NSMutableDictionary *paths = [[super JSONKeyPathsByPropertyKey] mutableCopy];
     paths[@"tempHigh"] = @"temp.max";
