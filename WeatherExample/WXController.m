@@ -17,6 +17,7 @@
 @property (nonatomic, strong) UIImageView *blurredImageView;
 @property (nonatomic, strong) NSDateFormatter *hourlyFormatter;
 @property (nonatomic, strong) NSDateFormatter *dailyFormatter;
+@property (nonatomic, assign) CGFloat screenHeight;
 
 @end
 
@@ -26,16 +27,21 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (id)init {
+    if (self = [super init]) {
+        _hourlyFormatter = [[NSDateFormatter alloc] init];
+        _hourlyFormatter.dateFormat = @"h a";
+        
+        _dailyFormatter = [[NSDateFormatter alloc] init];
+        _dailyFormatter.dateFormat = @"EEEE";
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor grayColor];
-    
-    self.hourlyFormatter = [[NSDateFormatter alloc] init];
-    self.hourlyFormatter.dateFormat = @"h a";
-    
-    self.dailyFormatter = [[NSDateFormatter alloc] init];
-    self.dailyFormatter.dateFormat = @"EEEE";
+    self.screenHeight = [UIScreen mainScreen].bounds.size.height;
     
     UIImage *background = [UIImage imageNamed:@"bg"];
     
@@ -50,25 +56,25 @@
     self.blurredImageView.alpha = 0;
     [self.view addSubview:self.blurredImageView];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc] init];
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorColor = [UIColor colorWithWhite:1 alpha:0.2];
+    self.tableView.pagingEnabled = YES;
     [self.view addSubview:self.tableView];
     
     CGRect headerFrame = [UIScreen mainScreen].bounds;
-    headerFrame.size.height -= 20;
     
     CGFloat inset = 20;
-    CGFloat tempHeight = 110;
+    CGFloat temperatureHeight = 110;
     CGFloat hiloHeight = 40;
     
     UIView *header = [[UIView alloc] initWithFrame:headerFrame];
     header.backgroundColor = [UIColor clearColor];
     self.tableView.tableHeaderView = header;
 
-    CGRect temperatureFrame = CGRectMake(inset, headerFrame.size.height - tempHeight - hiloHeight, headerFrame.size.width - 2*inset, tempHeight);
+    CGRect temperatureFrame = CGRectMake(inset, headerFrame.size.height - temperatureHeight - hiloHeight, headerFrame.size.width - 2*inset, temperatureHeight);
     UILabel *temperatureLabel = [[UILabel alloc] initWithFrame:temperatureFrame];
     temperatureLabel.backgroundColor = [UIColor clearColor];
     temperatureLabel.textColor = [UIColor whiteColor];
@@ -82,7 +88,7 @@
     hiloLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:28];
     [header addSubview:hiloLabel];
     
-    UILabel *cityLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)];
+    UILabel *cityLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, 30)];
     cityLabel.backgroundColor = [UIColor clearColor];
     cityLabel.textColor = [UIColor whiteColor];
     cityLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18];
@@ -105,6 +111,8 @@
     conditionsLabel.textColor = [UIColor whiteColor];
     [header addSubview:conditionsLabel];
     
+    // Sends a signal whenever tempHigh or tempLow change
+    // reduces both tempHigh and tempLow into a single value
     RAC(hiloLabel, text) = [[RACSignal combineLatest:@[
                                                        RACObserve([WXManager sharedManager], currentCondition.tempHigh),
                                                        RACObserve([WXManager sharedManager], currentCondition.tempLow)]
@@ -113,6 +121,7 @@
                                               }]
                             deliverOn:RACScheduler.mainThreadScheduler];
     
+    // Subscribe to every new currentCondition
     [[RACObserve([WXManager sharedManager], currentCondition)
       deliverOn:RACScheduler.mainThreadScheduler]
      subscribeNext:^(WXCondition *newCondition) {
@@ -122,12 +131,14 @@
          iconView.image = [UIImage imageNamed:[newCondition imageName]];
      }];
     
+    // Subscribe to every new hourlyForecast
     [[RACObserve([WXManager sharedManager], hourlyForecast)
       deliverOn:RACScheduler.mainThreadScheduler]
      subscribeNext:^(NSArray *newForecast) {
          [self.tableView reloadData];
      }];
     
+    // Subscribe to every new dailyForecast
     [[RACObserve([WXManager sharedManager], dailyForecast)
       deliverOn:RACScheduler.mainThreadScheduler]
      subscribeNext:^(NSArray *newForecast) {
@@ -138,6 +149,7 @@
         [[WXManager sharedManager] findCurrentLocation];
     }];
     
+    // After all the setup, fetch the latest weather
     [[WXManager sharedManager] findCurrentLocation];
 }
 
@@ -148,12 +160,10 @@
     
     self.backgroundImageView.frame = bounds;
     self.blurredImageView.frame = bounds;
-    
-    bounds.origin.y = 20;
-    bounds.size.height -= 20;
     self.tableView.frame = bounds;
 }
 
+// Gives us a light status bar for this view controller, new in iOS 7
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
@@ -196,6 +206,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // Add 1 cell for our faux header in both sections
     if (section == 0) {
         return MIN([[WXManager sharedManager].hourlyForecast count], 6) + 1;
     }
@@ -216,6 +227,7 @@
     cell.detailTextLabel.textColor = [UIColor whiteColor];
     
     if (indexPath.section == 0) {
+        // Hourly section
         if (indexPath.row == 0) {
             [self configureHeaderCell:cell title:@"Hourly Forecast"];
         }
@@ -225,6 +237,7 @@
         }
     }
     else if (indexPath.section == 1) {
+        // Daily section
         if (indexPath.row == 0) {
             [self configureHeaderCell:cell title:@"Daily Forecast"];
         }
@@ -240,7 +253,8 @@
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 55;
+    NSInteger cellCount = [self tableView:tableView numberOfRowsInSection:indexPath.section];
+    return self.screenHeight / (CGFloat)cellCount;
 }
 
 #pragma mark - UIScrollViewDelegate
