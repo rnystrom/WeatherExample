@@ -38,7 +38,6 @@
 		866E3DAF17E2B53B00FDC57B /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 866E3DAD17E2B53B00FDC57B /* bg@2x.png */; };
 		866E3DB517E2B86900FDC57B /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 866E3DB417E2B86900FDC57B /* UIImage+ImageEffects.m */; };
 		8675653C17E224680091B4DB /* WXDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 8675653B17E224680091B4DB /* WXDailyForecast.m */; };
-		869F2E4D17E7F4E900BEB556 /* libReactiveCocoa-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 869F2E4C17E7F4E900BEB556 /* libReactiveCocoa-iOS.a */; };
 		86E45C4B17D4E8C70090C100 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E45C4A17D4E8C70090C100 /* Foundation.framework */; };
 		86E45C4D17D4E8C70090C100 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E45C4C17D4E8C70090C100 /* CoreGraphics.framework */; };
 		86E45C4F17D4E8C70090C100 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E45C4E17D4E8C70090C100 /* UIKit.framework */; };
@@ -92,7 +91,7 @@
 		866E3DB417E2B86900FDC57B /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		8675653A17E224680091B4DB /* WXDailyForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXDailyForecast.h; path = ../WXDailyForecast.h; sourceTree = "<group>"; };
 		8675653B17E224680091B4DB /* WXDailyForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WXDailyForecast.m; path = ../WXDailyForecast.m; sourceTree = "<group>"; };
-		869F2E4C17E7F4E900BEB556 /* libReactiveCocoa-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libReactiveCocoa-iOS.a"; path = "ReactiveCocoa/ReactiveCocoaFramework/build/Debug/libReactiveCocoa-iOS.a"; sourceTree = "<group>"; };
+		869F2E4C17E7F4E900BEB556 /* libReactiveCocoa-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libReactiveCocoa-iOS.a"; path = "ReactiveCocoa/ReactiveCocoaFramework/build/Debug/libReactiveCocoa-iOS.a"; sourceTree = "<group>"; };
 		86E45C4717D4E8C70090C100 /* WeatherExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E45C4A17D4E8C70090C100 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86E45C4C17D4E8C70090C100 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -116,7 +115,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				869F2E4D17E7F4E900BEB556 /* libReactiveCocoa-iOS.a in Frameworks */,
 				86E96D6417D6BC0F00E2EEFA /* CoreLocation.framework in Frameworks */,
 				86E45C4D17D4E8C70090C100 /* CoreGraphics.framework in Frameworks */,
 				86E45C4F17D4E8C70090C100 /* UIKit.framework in Frameworks */,
@@ -461,8 +459,6 @@
 					"\"${PODS_ROOT}/Headers\"",
 					"\"${PODS_ROOT}/Headers/LBBlurredImage\"",
 					"\"${PODS_ROOT}/Headers/Mantle\"",
-					"\"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include\"",
-					"$(inherited)",
 				);
 				INFOPLIST_FILE = "WeatherExample/WeatherExample-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -482,8 +478,6 @@
 					"\"${PODS_ROOT}/Headers\"",
 					"\"${PODS_ROOT}/Headers/LBBlurredImage\"",
 					"\"${PODS_ROOT}/Headers/Mantle\"",
-					"\"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include\"",
-					"$(inherited)",
 				);
 				INFOPLIST_FILE = "WeatherExample/WeatherExample-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -4,80 +4,65 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-HexColors.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-LBBlurredImage.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-Mantle.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ReactiveCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-TSMessages.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>30243ECFE0B34B6F907138F9</key>
+		<key>1557DDD13EF94248A987EAE2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5BCCFCF959BF41D8B540FE44</key>
+		<key>4ACAABEC505E47C3B33065DB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6C4660251FC944278A2023B7</key>
+		<key>7F8DDA80E58945E4BB97721D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8E8C8465334E4CB384641806</key>
+		<key>BBD6855CADE04C25850690DB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>97E2B83D431442B899060BD1</key>
+		<key>BE35208D234F4FB381A25E8B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B4DCFE9A091742A497AAC92D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B77C0F77D5B24E3F9B4E973C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BEA245B1697D4783BF9FD342</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E865AB362FFA4CC2989EE008</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EBD3BBBABE3B491594692529</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F22997CAB4ED473E92C2A750</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F6E8D83A1C1E4881A132A520</key>
+		<key>C8F12AA778FE4D6086C6AD4C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

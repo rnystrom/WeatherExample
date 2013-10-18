@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "WXController.h"
+#import <TSMessages/TSMessage.h>
 
 @implementation AppDelegate
 
@@ -16,6 +17,9 @@
     self.window.rootViewController = [[WXController alloc] init];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [TSMessage setDefaultViewController: self.window.rootViewController];
+    
     return YES;
 }
 

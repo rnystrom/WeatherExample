@@ -9,7 +9,7 @@
 @import Foundation;
 @import CoreLocation;
 #import "WXCondition.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveCocoa/ReactiveCocoa/ReactiveCocoa.h>
 
 @interface WXManager : NSObject
 <CLLocationManagerDelegate>

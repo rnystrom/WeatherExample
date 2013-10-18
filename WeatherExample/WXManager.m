@@ -8,6 +8,7 @@
 
 #import "WXManager.h"
 #import "WXClient.h"
+#import <TSMessages/TSMessage.h>
 
 @interface WXManager ()
 
@@ -52,7 +53,9 @@
                                         ]];
           }]
          subscribeError:^(NSError *error) {
-             NSLog(@"%@",error);
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 [TSMessage showNotificationWithTitle:@"Error" subtitle:@"There was a problem fetching the latest weather." type:TSMessageNotificationTypeError];
+             });
          }];
     }
     return self;
